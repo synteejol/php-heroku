@@ -1,4 +1,11 @@
 <?php
+/*METHOD GET AND GET WITH GET ID*/
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Credentials: true");
+header("Access-Control-Max-Age: 1000");
+header("Access-Control-Allow-Headers: X-Requested-With, Content-Type, Origin, Cache-Control, Pragma, Authorization, Accept, Accept-Encoding");
+header("Access-Control-Allow-Methods: PUT,PATCH, POST, GET, OPTIONS, DELETE");
+
 $myArray = array();
 $myArray[0] ['id'] = 1;
 $myArray[0] ['nome'] = "video1";
