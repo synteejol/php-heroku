@@ -1,88 +1,19 @@
-    <?php
-    /*METHOD GET AND GET WITH GET ID*/
-    header("Access-Control-Allow-Origin: *");
-    header("Access-Control-Allow-Credentials: true");
-    header("Access-Control-Max-Age: 1000");
-    header("Access-Control-Allow-Headers: X-Requested-With, Content-Type, Origin, Cache-Control, Pragma, Authorization, Accept, Accept-Encoding");
-    header("Access-Control-Allow-Methods: PUT,PATCH, POST, GET, OPTIONS, DELETE");
+<?php
+$myArray = array();
+$myArray[0] ['id'] = 1;
+$myArray[0] ['nome'] = "sezione1";
+$myArray[0] ['descrizione'] = "breve descrizione";
+$myArray[0] ['immagine'] = "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=500&h=350&fit=crop&ixid=eyJhcHBfaWQiOjF9";
 
-    $servername = getenv('DB_HOST');
-    $username   = "root";
-    $password   = getenv('ALEPH_DB_ROOT_PASSWORD');
-    $dbname     = getenv('ALEPH_DATABASE');
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-      //echo "Connected successfully";
-    $sql = "SELECT * FROM sezioni";
-//     $sql2 = "SELECT * FROM video";
+$myArray[1] ['id'] = 2;
+$myArray[1] ['nome'] = "sezione2";
+$myArray[1] ['descrizione'] = "breve descrizione";
+$myArray[1] ['immagine'] = "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=500&h=350&fit=crop&ixid=eyJhcHBfaWQiOjF9";
 
-    $result = mysqli_query($conn,$sql);
-    $myArray = array();
-    if ($result->num_rows > 0) {
-    // output data of each row
-        while($row = $result->fetch_assoc()) {
-            $myArray[] = $row;
-        }
-        $length = count($myArray);
-        for ($x = 0; $x < $length; $x++) {
-          $myArray[$x]['immagine'] = 'data:image/jpg;base64,'.base64_encode($myArray[$x]['immagine']);
-
-        }
-//         print json_encode(base64_encode($myArray[3]['immagine']));
-         print json_encode($myArray);
-//           print json_encode($myArray);
-    }
-    else
-    {
-        echo "0 results";
-    }
+$myArray[2] ['id'] = 3;
+$myArray[2] ['nome'] = "sezione3";
+$myArray[2] ['descrizione'] = "breve descrizione";
+$myArray[2] ['immagine'] = "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=500&h=350&fit=crop&ixid=eyJhcHBfaWQiOjF9";
 
 
-//     try {
-//         $dbh = new PDO ("mysql:host=$servername;port=3306;charset=utf8; dbname=$dbname", $username,$password);
-//         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//         echo 'ok';
-//     } catch (PDOException $e) {
-//         echo 'Errore connessione al database !' . $e->getMessage();
-//         die();
-//     }
-//     /*END CONN DB*/
-//
-//     $json = trim(file_get_contents('php://input'));
-//     $input = json_decode($json, true);
-//
-//
-// if (isset ($_GET['id'])) {
-//     $id = $_GET['id'];
-//
-//     try {
-//         $sql = 'SELECT *FROM sezioni WHERE id = :id';
-//         $stmt = $dbh->prepare($sql);
-//         $id = $id;
-//         $stmt->execute(['id' => $id]);
-//         $rows = $stmt->fetch();
-//         echo json_encode($rows);
-//     } catch (PDOException $e) {
-//         echo 'Errore select tabella !' . $e->getMessage();
-//         die();
-//     }
-// } else {
-//     try {
-//         $sql = 'SELECT *FROM sezioni';
-//         $stmt = $dbh->prepare($sql);
-//         $stmt->execute();
-//         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//         echo json_encode($rows);
-//     } catch (PDOException $e) {
-//         echo 'Errore select tabella !' . $e->getMessage();
-//         die();
-//     }
-//
-// }
-
-
-    ?>
+print json_encode($myArray);
