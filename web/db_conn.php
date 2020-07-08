@@ -20,13 +20,13 @@ $myArray[1] ['immagine'] = "https://i.imgur.com/TE3JKWs.jpg";
 $myArray[2] ['id'] = 3;
 $myArray[2] ['nome'] = "sezione3";
 $myArray[2] ['descrizione'] = "breve descrizione";
-$myArray[2] ['immagine'] = "https://imgur.com/NDKptI1";
+$myArray[2] ['immagine'] = "https://imgur.com/NDKptI1.jpg";
 
 
 $myArray[3] ['id'] = 4;
 $myArray[3] ['nome'] = "sezione3";
 $myArray[3] ['descrizione'] = "breve descrizione";
-$myArray[3] ['immagine'] = "https://imgur.com/pGfEHKb";
+$myArray[3] ['immagine'] = "https://imgur.com/pGfEHKb.jpg";
 
 // $myArray[4] ['id'] = 5;
 // $myArray[4] ['nome'] = "sezione3";
